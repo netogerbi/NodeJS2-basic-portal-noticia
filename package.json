@@ -1,0 +1,22 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de Notícias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netogerbi/NodeJS2.git"
+  },
+  "author": "NetoGerbi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netogerbi/NodeJS2/issues"
+  },
+  "homepage": "https://github.com/netogerbi/NodeJS2#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

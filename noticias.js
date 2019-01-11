@@ -12,3 +12,6 @@ http.createServer((request,response) =>{
     }
 
 }).listen(3010);
+
+
+//npm init -> package.json

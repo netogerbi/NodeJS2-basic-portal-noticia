@@ -9,7 +9,7 @@ app.get("/",(req, res)=>{
   res.render("home/index");
 });
 
-app.get("/formulario-noticia",(req, res)=>{
+app.get("/admin",(req, res)=>{
   res.render("admin/form_add_noticia");
 });
 

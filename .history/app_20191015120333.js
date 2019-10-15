@@ -9,6 +9,6 @@ app.get("/",(req, res)=>{
     
 });
 
-app.get("/tecnology",(req, res)=>{
-  res.render("section/tecnology");
+app.get("/tecnologia",(req, res)=>{
+    response.render("section/tecnology");
 });

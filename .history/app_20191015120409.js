@@ -10,5 +10,5 @@ app.get("/",(req, res)=>{
 });
 
 app.get("/tecnology",(req, res)=>{
-  res.render("section/tecnology");
+    response.render("section/tecnology");
 });

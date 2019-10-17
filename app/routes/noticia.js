@@ -1,21 +1,19 @@
 module.exports = (app) => {
 
-  app.get("/noticias",(req, res)=>{
-    
-  const mysql = require('mysql')
+  app.get("/noticias", (req, res) => {
 
-  const conn = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: '',
-    database: 'portal_noticias'
-  })
+    const mysql = require('mysql')
 
-  const query = 'SELECT * FROM noticias;'
-  conn.query(query, (error, result) => {
-    res.send(result)
-  })
+    const conn = mysql.createConnection({
+      host: '127.0.0.1',
+      user: 'root',
+      password: '',
+      database: 'portal_noticias'
+    })
 
-//    res.render("noticias/noticias");
+    const query = 'SELECT * FROM noticias;'
+    conn.query(query, (error, result) => {
+      res.render("noticias/noticias", { noticias: result });
+    })
   });
 }

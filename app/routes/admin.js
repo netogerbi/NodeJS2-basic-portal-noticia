@@ -11,7 +11,7 @@ module.exports = function (app) {
     const noticiasModel = app.app.models.noticiasModel;
 
     noticiasModel.salvarNoticia(noticia, conn, (error, result) => {
-      res.render("noticias/noticias", { noticias: result });
+      res.redirect('/noticias')
     })
 
 

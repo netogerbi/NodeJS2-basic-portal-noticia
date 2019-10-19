@@ -1,7 +1,7 @@
 module.exports = function (app) {
 
   app.get("/formulario-noticia", (req, res)=>{
-    res.render("admin/form_add_noticia");
+    res.render("admin/form_add_noticia",  { invalid: {}, noticia: {} });
   });
 
 
@@ -10,17 +10,17 @@ module.exports = function (app) {
 
     req.assert('titulo', 'O título é obgrigatório').notEmpty();
     req.assert('resumo', 'O resumo é obgrigatório').notEmpty();
-    req.assert('titulo', 'O resumo deve conter entre 10 e 100 caracteres').len(10, 100);
+    req.assert('resumo', 'O resumo deve conter entre 10 e 100 caracteres').len(10, 100);
     req.assert('autor', 'O autor é obgrigatório').notEmpty();
     req.assert('data_noticia', 'A data é obgrigatória').notEmpty().isDate({fomat: 'YYYY-MM-DD'});
-    req.assert('noticia', 'A notícia é obgrigatória').notEmpty();
+    req.assert('noticia', 'A notícia é obrigatória').notEmpty();
 
     const errors = req.validationErrors();
 
     
     if(errors) {
 
-      res.render("admin/form_add_noticia", { invalid: errors });
+      res.render("admin/form_add_noticia", { invalid: errors, noticia: noticia });
       return;
     
     }

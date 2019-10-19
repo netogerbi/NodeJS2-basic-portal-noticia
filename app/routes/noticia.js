@@ -1,12 +1,12 @@
 module.exports = (app) => {
 
-  app.get("/noticias", (req, res) => {
+  app.get("/noticia", (req, res) => {
     
     const conn = app.config.dbConnection()
     
-    const query = 'SELECT * FROM noticias;'
+    const query = 'SELECT * FROM noticias WHERE id_noticias=2;'
     conn.query(query, (error, result) => {
-      res.render("noticias/noticias", { noticias: result });
+      res.render("noticias/noticia", { noticia: result });
     })
   });
 }

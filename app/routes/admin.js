@@ -6,8 +6,15 @@ module.exports = function (app) {
 
 
   app.post("/noticias/salvar", (req, res)=>{
-    const noticias = req.body;
-    res.send(noticias); // sem o body pareser, o express nao consegue recuperar o body
+    const noticia = req.body;
+    const conn = app.config.dbConnection()
+    const noticiasModel = app.app.models.noticiasModel;
+
+    noticiasModel.salvarNoticia(noticia, conn, (error, result) => {
+      res.render("noticias/noticias", { noticias: result });
+    })
+
+
   });
 
 }

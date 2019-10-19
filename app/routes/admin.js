@@ -8,9 +8,10 @@ module.exports = function (app) {
   app.post("/noticias/salvar", (req, res)=>{
     const noticia = req.body;
     const conn = app.config.dbConnection()
-    const noticiasModel = app.app.models.noticiasModel;
+    const noticiasModel = new app.app.models.NoticiasDAO(conn);
 
-    noticiasModel.salvarNoticia(noticia, conn, (error, result) => {
+    noticiasModel.salvarNoticia(noticia, (error, result) => {
+      // todo post deve ter um redirect por convenção
       res.redirect('/noticias')
     })
 

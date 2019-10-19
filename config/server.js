@@ -16,6 +16,4 @@ consign()
   .then('app/models')
   .into(app)
 
-
-
 module.exports = app;

@@ -1,6 +1,7 @@
 const express = require("express")
 const consign = require('consign')
 const bodyParser = require('body-parser')
+const expressValidator = require('express-validator')
 
 const app = express();
 app.set('view engine', 'ejs')
@@ -9,6 +10,7 @@ app.set('view engine', 'ejs')
 app.set('views','./app/views') 
 
 app.use(bodyParser.urlencoded({ extended: true })) // verificar o que é o extended
+app.use(expressValidator()) //adicionando o validator como middleware - v3.2 express validator
 
 consign()
   .include('app/routes')
